@@ -17,14 +17,22 @@
 
 ## 安装
 
-把 `nvc-communication/` 目录拷进你的 Claude 个人 skills 目录：
+直接 clone 到你的 Claude 个人 skills 目录（**目标文件夹名必须是 `nvc-communication`**，Claude 以此识别 skill）：
 
 ```bash
-git clone https://github.com/gusujushi/gusujushi-nonviolent-communication.git
-cp -r gusujushi-nonviolent-communication/nvc-communication ~/.claude/skills/
+git clone https://github.com/gusujushi/gusujushi-nonviolent-communication.git ~/.claude/skills/nvc-communication
 ```
 
 之后在 Claude Code 里，符合上述场景的对话会自动召回本 skill；也可手动用 `/nvc-communication` 触发。
+
+## 更新 / 贡献
+
+仓库即 skill 本体——`~/.claude/skills/nvc-communication/` 本身就是一个 clone。改完 `SKILL.md` 后一条命令推送：
+
+```bash
+cd ~/.claude/skills/nvc-communication
+./sync.sh "说明你改了什么"     # = git add + commit + push
+```
 
 ## 许可证
 
